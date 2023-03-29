@@ -5,7 +5,7 @@ public class we{
 	 * @param args
 	 * @return 
 	 */
-	public static double getTotal(double[][] array) {
+	public static double calcTotal(double[][] array) {
 	    double total = 0;
 
 	    for (int row = 0; row < array.length; row++) {
@@ -17,24 +17,14 @@ public class we{
 	    return total;
 	}
 
-	public static double getAverage(double[][] array) {
-	    return getTotal(array) / getElementCount(array);
+	public static double calcAverage(double[][] array) {
+	    return calcTotal(array) / getElementCount(array);
 	}
 
-	public static double getRowTotal(double[][] array, int row) {
+	public static double calcRowAverage(double[][] array, int row) {
 	    double total = 0;
 
 	    for (int col = 0; col < array[row].length; col++) {
-	        total += array[row][col];
-	    }
-
-	    return total;
-	}
-
-	public static double getColumnTotal(double[][] array, int col) {
-	    double total = 0;
-
-	    for (int row = 0; row < array.length; row++) {
 	        total += array[row][col];
 	    }
 
@@ -58,8 +48,10 @@ public class we{
 	            {16,17,18,19,20},
 	            {21,22,23,24,25}};
 
+	    System.out.println("Total : " + calcTotal(studentTestScores));
+	    System.out.println("Average : " + calcAverage(studentTestScores));
+	    System.out.println("Row Average : " + calcRowAverage(studentTestScores, 0));
 
-	    System.out.println("Average : " + getAverage(studentTestScores));
 
 
 	}
