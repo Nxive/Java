@@ -1,0 +1,43 @@
+
+public class TwoArray {
+	   public static String Cheapest(String cars[], double prices[])
+
+	   {
+
+	         int temp = 0;
+
+	         for (int i = 0; i < cars.length; i++)
+
+	      {
+
+	           if (prices[i] < prices[temp])
+
+	            {
+
+	                 temp = i;
+
+	             }
+
+	         }
+
+	         return cars[temp];
+
+	     }
+
+	  public static void main(String[] args)
+
+	  {
+
+	  // define the array of apple names and their prices
+
+	    String cars[] = {"Honda Accord", "Chevrolet Suburban", "Dodge Charger", "Kia Optima", "Acura TLX"};
+
+	    double prices[] = {17000, 48000, 24000, 22500, 17999};
+
+	  // print the cheapest apple by calling the function Cheapest
+
+	    System.out.println("The cheapest car is: " + Cheapest(cars, prices));
+
+	     }
+
+	  }
